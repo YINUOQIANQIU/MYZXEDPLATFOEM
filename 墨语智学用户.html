@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人中心</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: '#2962FF',
+        secondary: '#1A237E',
+        success: '#4CAF50',
+        error: '#F44336'
+      },
+      borderRadius: {
+        'none': '0px',
+        'sm': '2px',
+        DEFAULT: '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        '2xl': '20px',
+        '3xl': '24px',
+        'full': '9999px',
+        'button': '4px'
+      },
+      fontFamily: {
+        'sans': ['Poppins', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+body {
+  min-height: 1024px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F5F7FF;
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.progress-ring {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#2962FF 75%, #E5E7EB 0);
+  position: relative;
+}
+.progress-ring::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  top: 10px;
+  left: 10px;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<div class="max-w-[1440px] mx-auto px-8 py-6">
+  <a href="墨语智学首页.html" class="!rounded-button inline-flex items-center gap-2 px-6 py-3 mb-6 bg-white border border-gray-200 hover:bg-gray-50 transition-colors shadow-sm">
+    <i class="fas fa-arrow-left"></i>
+    返回首页
+  </a>
+  
+  <div class="glass-effect rounded-xl p-8 mb-8 shadow-lg">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <div class="relative group">
+          <img src="94B2FFC12D41C799B69B2668BBA16BE7.jpg" class="w-24 h-24 rounded-full object-cover" alt="头像">
+          <div class="absolute inset-0 bg-black bg-opacity-50 rounded-full opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity cursor-pointer">
+            <i class="fas fa-camera text-white text-xl"></i>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-2xl font-bold mb-2">王梦琪</h1>
+          <div class="flex items-center gap-3">
+            <span class="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              <i class="fas fa-crown"></i>
+              高级会员
+            </span>
+            <span class="text-gray-500">ID: student2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="progress-ring flex items-center justify-center">
+          <span class="relative z-10 text-2xl font-bold text-primary">75%</span>
+        </div>
+        <p class="mt-2 text-gray-600">学习目标完成度</p>
+      </div>
+    </div>
+    <div class="flex gap-4 mt-8">
+      <button class="!rounded-button flex items-center gap-2 px-6 py-3 bg-primary text-white hover:bg-secondary transition-colors">
+        <i class="fas fa-user-edit"></i>
+        编辑资料
+      </button>
+      <button class="!rounded-button flex items-center gap-2 px-6 py-3 border border-gray-300 hover:bg-gray-50 transition-colors">
+        <i class="fas fa-exchange-alt"></i>
+        切换账号
+      </button>
+      <a href="墨语智学会员.html" class="!rounded-button flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 transition-opacity">
+        <i class="fas fa-crown"></i>
+        会员中心
+      </a>
+    </div>
+  </div>
+  
+  <div class="grid grid-cols-3 gap-8 mb-8">
+    <div class="glass-effect rounded-xl p-6 shadow-lg">
+      <div class="flex justify-between items-start mb-4">
+        <h3 class="text-lg font-medium">累计学习时长</h3>
+        <i class="fas fa-info-circle text-gray-400 cursor-help" title="包含所有课程的学习时间"></i>
+      </div>
+      <div class="text-4xl font-bold text-primary mb-2">168.5<span class="text-xl ml-1">小时</span></div>
+      <div class="text-gray-500">较上周 <span class="text-green-500">↑12.3%</span></div>
+    </div>
+    <div class="glass-effect rounded-xl p-6 shadow-lg">
+      <div class="flex justify-between items-start mb-4">
+        <h3 class="text-lg font-medium">本周活跃天数</h3>
+        <i class="fas fa-info-circle text-gray-400 cursor-help" title="连续学习天数将获得额外奖励"></i>
+      </div>
+      <div class="text-4xl font-bold text-primary mb-2">5<span class="text-xl ml-1">天</span></div>
+      <div class="text-gray-500">连续签到 <span class="text-primary">6 天</span></div>
+    </div>
+    <div class="glass-effect rounded-xl p-6 shadow-lg">
+      <div class="flex justify-between items-start mb-4">
+        <h3 class="text-lg font-medium">练习正确率</h3>
+        <i class="fas fa-info-circle text-gray-400 cursor-help" title="所有题型的平均正确率"></i>
+      </div>
+      <div id="accuracyChart" class="h-[120px]"></div>
+    </div>
+  </div>
+  
+  <div class="glass-effect rounded-xl p-8 mb-8 shadow-lg">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">学习档案</h2>
+      <div class="flex gap-4">
+        <button class="!rounded-button px-4 py-2 bg-primary text-white">词汇</button>
+        <button class="!rounded-button px-4 py-2 border border-gray-300">听力</button>
+        <button class="!rounded-button px-4 py-2 border border-gray-300">阅读</button>
+        <button class="!rounded-button px-4 py-2 border border-gray-300">写作</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-8">
+      <div id="skillChart" class="h-[300px]"></div>
+      <div>
+        <h3 class="text-lg font-medium mb-4">最近练习记录</h3>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <div class="font-medium">四级核心词汇 Unit 5</div>
+              <div class="text-gray-500 text-sm">2024-01-15 14:30</div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-green-500">正确率 92%</span>
+              <span class="bg-red-100 text-red-600 px-2 py-1 rounded text-sm">4 道错题</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <div class="font-medium">听力真题模拟 2023-12</div>
+              <div class="text-gray-500 text-sm">2024-01-14 16:45</div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-green-500">正确率 85%</span>
+              <span class="bg-red-100 text-red-600 px-2 py-1 rounded text-sm">6 道错题</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div>
+              <div class="font-medium">阅读理解专项训练</div>
+              <div class="text-gray-500 text-sm">2024-01-13 10:20</div>
+            </div>
+            <div class="flex items-center gap-4">
+              <span class="text-green-500">正确率 88%</span>
+              <span class="bg-red-100 text-red-600 px-2 py-1 rounded text-sm">3 道错题</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="glass-effect rounded-xl p-8 shadow-lg">
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-xl font-bold">会员特权</h2>
+      <div class="flex items-center gap-2 text-gray-500">
+        <i class="far fa-clock"></i>
+        <span>剩余 26 天</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 gap-6">
+      <div class="p-6 border border-primary rounded-xl bg-primary bg-opacity-5">
+        <i class="fas fa-robot text-primary text-2xl mb-4"></i>
+        <h3 class="font-medium mb-2">AI 助教</h3>
+        <p class="text-gray-500 text-sm">智能批改和个性化指导</p>
+      </div>
+      <div class="p-6 border border-primary rounded-xl bg-primary bg-opacity-5">
+        <i class="fas fa-book-reader text-primary text-2xl mb-4"></i>
+        <h3 class="font-medium mb-2">专属课程</h3>
+        <p class="text-gray-500 text-sm">独家定制学习计划</p>
+      </div>
+      <div class="p-6 border border-gray-200 rounded-xl bg-gray-50">
+        <i class="fas fa-video text-gray-400 text-2xl mb-4"></i>
+        <h3 class="font-medium text-gray-400 mb-2">直播课程</h3>
+        <p class="text-gray-400 text-sm">升级会员即可解锁</p>
+      </div>
+      <div class="p-6 border border-gray-200 rounded-xl bg-gray-50">
+        <i class="fas fa-chart-line text-gray-400 text-2xl mb-4"></i>
+        <h3 class="font-medium text-gray-400 mb-2">学习分析</h3>
+        <p class="text-gray-400 text-sm">升级会员即可解锁</p>
+      </div>
+    </div>
+    <div class="mt-8 text-center">
+      <a href="墨语智学会员.html" class="!rounded-button inline-block px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 transition-opacity">
+        升级至年度会员
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+const accuracyChart = echarts.init(document.getElementById('accuracyChart'));
+accuracyChart.setOption({
+  animation: false,
+  grid: {
+    top: 10,
+    right: 10,
+    bottom: 20,
+    left: 40,
+    containLabel: true
+  },
+  xAxis: {
+    type: 'category',
+    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    axisLine: {
+      lineStyle: {
+        color: '#E5E7EB'
+      }
+    }
+  },
+  yAxis: {
+    type: 'value',
+    min: 60,
+    max: 100,
+    axisLine: {
+      show: false
+    },
+    splitLine: {
+      lineStyle: {
+        color: '#E5E7EB'
+      }
+    }
+  },
+  series: [{
+    data: [85, 82, 91, 88, 86, 90, 92],
+    type: 'line',
+    smooth: true,
+    symbolSize: 8,
+    lineStyle: {
+      color: '#2962FF',
+      width: 3
+    },
+    itemStyle: {
+      color: '#2962FF'
+    },
+    areaStyle: {
+      color: {
+        type: 'linear',
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        colorStops: [{
+          offset: 0,
+          color: 'rgba(41, 98, 255, 0.2)'
+        }, {
+          offset: 1,
+          color: 'rgba(41, 98, 255, 0)'
+        }]
+      }
+    }
+  }]
+});
+
+const skillChart = echarts.init(document.getElementById('skillChart'));
+skillChart.setOption({
+  animation: false,
+  radar: {
+    indicator: [
+      { name: '词汇量', max: 100 },
+      { name: '听力理解', max: 100 },
+      { name: '阅读速度', max: 100 },
+      { name: '语法掌握', max: 100 },
+      { name: '写作能力', max: 100 }
+    ],
+    splitArea: {
+      areaStyle: {
+        color: ['rgba(41, 98, 255, 0.02)', 'rgba(41, 98, 255, 0.05)', 'rgba(41, 98, 255, 0.08)', 'rgba(41, 98, 255, 0.11)']
+      }
+    }
+  },
+  series: [{
+    type: 'radar',
+    data: [{
+      value: [85, 78, 82, 90, 75],
+      name: '能力评估',
+      areaStyle: {
+        color: 'rgba(41, 98, 255, 0.2)'
+      },
+      lineStyle: {
+        color: '#2962FF'
+      },
+      itemStyle: {
+        color: '#2962FF'
+      }
+    }]
+  }]
+});
+
+window.addEventListener('resize', function() {
+  accuracyChart.resize();
+  skillChart.resize();
+});
+</script>
+</body>
+</html>
